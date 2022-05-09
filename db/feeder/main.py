@@ -1,6 +1,5 @@
 import asyncio
 
-import faker
 from dotenv import dotenv_values
 
 from db_wrapper import DBWrapper
@@ -9,14 +8,16 @@ from db.feeder.generation import meta
 
 async def feed_db(db):
     for table, rows in meta.data.items():
-        header, rows = rows[0], rows[1:]
+        print('Feeding table:', table)
 
-        sql = f"INSERT INTO user ({', '.join(header)}) VALUES ({', '.join('%s' for _ in header)})"
+        header, rows = rows[0], rows[1:]
+        sql = f"INSERT INTO {table} ({', '.join(header)}) VALUES ({', '.join('%s' for _ in header)})"
 
         async with db.query() as cur:
             for row in rows:
                 await cur.execute(sql, row)
 
+        print(f'~> {len(rows)} rows inserted')
 
 
 async def main():
