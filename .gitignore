@@ -1,2 +1,6 @@
 # IDE COnfiguration Folder
 .idea
+
+# Binary & compiled obj
+bin
+obj
