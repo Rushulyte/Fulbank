@@ -1,5 +1,8 @@
-# IDE COnfiguration Folder
+# IDE Configuration Folder
 .idea
+
+# Backup files
+*.bak
 
 # Binary & compiled obj
 bin
