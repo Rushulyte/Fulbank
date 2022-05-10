@@ -4,8 +4,31 @@ from hashlib import sha256
 from db.feeder.meta import meta, Feed, fake
 
 
+@meta.generate(2)
+class UserType(Feed):
+
+    @staticmethod
+    def gen_role():
+        yield 'admin'
+        yield 'user'
+
+    _gen_role = gen_role()
+    __slots__ = ('name',)
+
+    def __init__(self):
+        self.name = next(self._gen_role)
+
+
 @meta.generate(10)
 class User(Feed):
+
+    @staticmethod
+    def gen_role_id():
+        yield 1
+        while True:
+            yield 2
+
+    _gen_role_id = gen_role_id()
     __slots__ = ('firstname', 'lastname', 'phone', 'email', 'authentication_string', 'salt')
 
     def __init__(self):
@@ -19,10 +42,4 @@ class User(Feed):
 
         self.salt = secrets.token_hex(16)
         self.authentication_string = sha256((password + self.salt).encode('utf-8')).hexdigest()
-
-        def gen_role():
-            yield 1
-            while True:
-                yield 2
-
-        self.role = gen_role()
+        self.role = next(self._gen_role_id)
