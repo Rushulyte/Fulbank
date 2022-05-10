@@ -62,7 +62,7 @@ CREATE TABLE `BankAccount` (
   KEY `bank_account_account_type_id_fk` (`account_type`),
   KEY `bank_account_user_id_fk` (`user_id`),
   CONSTRAINT `bank_account_account_type_id_fk` FOREIGN KEY (`account_type`) REFERENCES `AccountType` (`id`),
-  CONSTRAINT `bank_account_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+  CONSTRAINT `bank_account_user_id_fk` FOREIGN KEY (`user_id`) REFERENCES `User` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -201,7 +201,7 @@ CREATE TABLE `User` (
   `lastname` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `authentication_string` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(24) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `salt` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_date` datetime NOT NULL,
   PRIMARY KEY (`id`),
