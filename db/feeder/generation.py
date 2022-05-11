@@ -29,7 +29,7 @@ class User(Feed):
             yield 2
 
     _gen_role_id = gen_role_id()
-    __slots__ = ('firstname', 'lastname', 'email', 'authentication_string', 'phone', 'salt', 'created_date')
+    __slots__ = ('firstname', 'lastname', 'email', 'authentication_string', 'phone', 'salt', 'created_date', 'user_type')
 
     def __init__(self):
         self.firstname = fake.first_name()
@@ -42,6 +42,6 @@ class User(Feed):
 
         self.salt = secrets.token_hex(16)
         self.authentication_string = sha256((password + self.salt).encode('utf-8')).hexdigest()
-        self.role = next(self._gen_role_id)
+        self.user_type = next(self._gen_role_id)
 
         self.created_date = fake.date_time_between(start_date='-1y', end_date='now', tzinfo=None)
