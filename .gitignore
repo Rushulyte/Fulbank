@@ -4,6 +4,9 @@
 # Backup files
 *.bak
 
+# WinDesign file
+*.wdt
+
 # Binary & compiled obj
 bin
 obj
