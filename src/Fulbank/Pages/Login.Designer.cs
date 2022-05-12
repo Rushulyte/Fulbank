@@ -103,7 +103,7 @@ namespace Fulbank
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Login";
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Closing += new CancelEventHandler(this.Login_Closing);
             this.GroupBox.ResumeLayout(false);
             this.GroupBox.PerformLayout();
             this.ResumeLayout(false);

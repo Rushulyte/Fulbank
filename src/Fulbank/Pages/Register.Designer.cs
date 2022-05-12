@@ -103,7 +103,7 @@ namespace Fulbank
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Register";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
+            this.Closing += new CancelEventHandler(this.Register_Closing);
             this.GroupBox.ResumeLayout(false);
             this.GroupBox.PerformLayout();
             this.ResumeLayout(false);
