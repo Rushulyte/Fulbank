@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace Fulbank
 {
-    partial class Login
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Fulbank
         private void InitializeComponent()
         {
             this.GroupBox = new System.Windows.Forms.GroupBox();
-            this.linkToRegister = new System.Windows.Forms.LinkLabel();
+            this.linkToLogin = new System.Windows.Forms.LinkLabel();
             this.psswdLabel = new System.Windows.Forms.Label();
             this.idLabel = new System.Windows.Forms.Label();
             this.psswdTextBox = new System.Windows.Forms.TextBox();
@@ -42,27 +42,27 @@ namespace Fulbank
             // 
             // GroupBox
             // 
-            this.GroupBox.Controls.Add(this.linkToRegister);
+            this.GroupBox.Controls.Add(this.linkToLogin);
             this.GroupBox.Controls.Add(this.psswdLabel);
             this.GroupBox.Controls.Add(this.idLabel);
             this.GroupBox.Controls.Add(this.psswdTextBox);
             this.GroupBox.Controls.Add(this.idTextBox);
-            this.GroupBox.Location = new System.Drawing.Point(55, 41);
+            this.GroupBox.Location = new System.Drawing.Point(62, 47);
             this.GroupBox.Name = "GroupBox";
             this.GroupBox.Size = new System.Drawing.Size(316, 193);
-            this.GroupBox.TabIndex = 0;
+            this.GroupBox.TabIndex = 1;
             this.GroupBox.TabStop = false;
-            this.GroupBox.Text = "Connexion";
+            this.GroupBox.Text = "Inscription";
             // 
-            // linkToRegister
+            // linkToLogin
             // 
-            this.linkToRegister.Location = new System.Drawing.Point(12, 148);
-            this.linkToRegister.Name = "linkToRegister";
-            this.linkToRegister.Size = new System.Drawing.Size(298, 23);
-            this.linkToRegister.TabIndex = 4;
-            this.linkToRegister.TabStop = true;
-            this.linkToRegister.Text = "Vous n\'avez pas de compte? Inscrivez-vous";
-            this.linkToRegister.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkToLogin.Location = new System.Drawing.Point(12, 148);
+            this.linkToLogin.Name = "linkToLogin";
+            this.linkToLogin.Size = new System.Drawing.Size(298, 23);
+            this.linkToLogin.TabIndex = 4;
+            this.linkToLogin.TabStop = true;
+            this.linkToLogin.Text = "Vous avez déjà un compte? Connectez-vous";
+            this.linkToLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // psswdLabel
             // 
@@ -94,28 +94,27 @@ namespace Fulbank
             this.idTextBox.Size = new System.Drawing.Size(143, 20);
             this.idTextBox.TabIndex = 0;
             // 
-            // Login
+            // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(440, 287);
             this.Controls.Add(this.GroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Login";
-            this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Name = "Register";
+            this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.GroupBox.ResumeLayout(false);
             this.GroupBox.PerformLayout();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.TextBox idTextBox;
-        private System.Windows.Forms.TextBox psswdTextBox;
-        private System.Windows.Forms.Label idLabel;
-        private System.Windows.Forms.Label psswdLabel;
-        private System.Windows.Forms.LinkLabel linkToRegister;
-
         private System.Windows.Forms.GroupBox GroupBox;
+        private System.Windows.Forms.LinkLabel linkToLogin;
+        private System.Windows.Forms.Label psswdLabel;
+        private System.Windows.Forms.Label idLabel;
+        private System.Windows.Forms.TextBox psswdTextBox;
+        private System.Windows.Forms.TextBox idTextBox;
 
         #endregion
     }

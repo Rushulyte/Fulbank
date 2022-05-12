@@ -3,21 +3,21 @@ using System.Windows.Forms;
 
 namespace Fulbank
 {
-    public partial class Login : Form
+    public partial class Register : Form
     {
-        public Login()
+        public Register()
         {
             InitializeComponent();
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register Register = new Register();
-            Register.Show();
+            Login Login = new Login();
+            Login.Show();
             this.Hide();
         }
-        
-        private void Login_Closing(object sender, EventArgs e)
+
+        private void Register_Closing(object sender, EventArgs e)
         {
             Application.Exit();
         }

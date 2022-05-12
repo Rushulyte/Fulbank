@@ -58,6 +58,12 @@
         <Compile Include="Pages\Login.Designer.cs">
           <DependentUpon>Login.cs</DependentUpon>
         </Compile>
+        <Compile Include="Pages\Register.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Pages\Register.Designer.cs">
+          <DependentUpon>Register.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <EmbeddedResource Include="Pages\Home.resx">
@@ -65,6 +71,9 @@
         </EmbeddedResource>
         <EmbeddedResource Include="Pages\Login.resx">
           <DependentUpon>Login.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="Pages\Register.resx">
+          <DependentUpon>Register.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
