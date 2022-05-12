@@ -4,6 +4,17 @@
 # Backup files
 *.bak
 
+# WinDesign file
+*.wdt
+
 # Binary & compiled obj
 bin
 obj
+
+# Python env & cache
+venv
+__pycache__
+.py[cod]
+
+# Environment variables
+.env
