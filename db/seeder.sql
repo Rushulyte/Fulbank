@@ -29,7 +29,6 @@ DROP TABLE IF EXISTS `AccountType`;
 CREATE TABLE `AccountType` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(16) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `description` varchar(64) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `interest` float NOT NULL DEFAULT 1,
   `ceil` float NOT NULL,
   PRIMARY KEY (`id`)
