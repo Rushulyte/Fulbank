@@ -1,5 +1,11 @@
 name: Unittests
-on: [pull_request, push]
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
 jobs:
   build:
     runs-on: windows-latest
