@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -73,11 +74,17 @@ namespace Fulbank.Classes
             // Fonctions
             private string ToStr(Collection<string> list)
             {
-                return default;
+                string result = list[0];
+                for (int i = 1 ; i < list.Count; i++ )
+                {
+                    result += "," + list[i];
+                }
+                return result;
             }
-            private Collection<string> ToList(string str)
+            public string[] ToList(string str)
             {
-                return default;
+                Collection<string> result = new Collection<string>();
+                return str.Split(',');
             }
             private bool verifyQuery(string query)
             {
