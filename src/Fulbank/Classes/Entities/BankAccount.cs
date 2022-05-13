@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Fulbank.entities;
 
-public class BankAccount : MoneyInterface
+public class BankAccount : MoneyInterface Meta
 {
     #region Attributes
         private string _iban;

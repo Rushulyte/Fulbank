@@ -2,7 +2,7 @@
 
 namespace Fulbank.entities;
 
-public class AccountType
+public class AccountType : Meta
 {
     #region Attributes
         private int _id;

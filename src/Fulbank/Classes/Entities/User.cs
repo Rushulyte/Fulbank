@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Fulbank.entities;
 
-public class User
+public class User : Meta
 {
     #region Attributes
         private int _id;

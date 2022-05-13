@@ -3,7 +3,7 @@ using System.Dynamic;
 
 namespace Fulbank.entities;
 
-public abstract class MoneyInterface
+public abstract class MoneyInterface : Meta
 {
     #region Attributes
         private int _id;

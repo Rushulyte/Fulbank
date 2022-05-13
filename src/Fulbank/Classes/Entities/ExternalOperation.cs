@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Fulbank.entities;
-public class ExternalOperation : Operation
+public class ExternalOperation : Operation Meta
 {
     #region Attributes
         private string _targetRib;

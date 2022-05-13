@@ -2,7 +2,7 @@
 
 namespace Fulbank.entities;
 
-public class Conversion
+public class Conversion : Meta
 {
     #region Attributes
         private int _id;

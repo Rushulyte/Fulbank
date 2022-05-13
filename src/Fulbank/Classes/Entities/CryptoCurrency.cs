@@ -2,7 +2,7 @@
 
 namespace Fulbank.entities;
 
-public class CryptoCurrency
+public class CryptoCurrency : Meta
 {
     #region Attributes
         private int _id;
