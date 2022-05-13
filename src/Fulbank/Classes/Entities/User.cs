@@ -128,11 +128,11 @@ public class User : Meta
     #endregion
     
     #region Fonctions
-        public void addAccount(MoneyInterface account)
+        public void linkAccount(MoneyInterface account)
         {
             this._accounts.Add(account);
         }
-        public void removeAccount(MoneyInterface account)
+        public void unlinkAccount(MoneyInterface account)
         {
             this._accounts.Remove(account);
         }

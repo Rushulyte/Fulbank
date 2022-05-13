@@ -54,21 +54,21 @@ public class BankAccount : MoneyInterface Meta
     
     #region Fonctions
         // Operations
-        public void addOperation(Operation operation)
+        public void linkOperation(Operation operation)
         {
             this._operations.Add(operation);
         }
-        public void removeOperation(Operation operation)
+        public void unlinkOperation(Operation operation)
         {
             this._operations.Remove(operation);
         }
         
         // Conversions
-        public void addConversion(Conversion conversion)
+        public void linkConversion(Conversion conversion)
         {
             this._conversions.Add(conversion);
         }
-        public void removeConversion(Conversion conversion)
+        public void unlinkConversion(Conversion conversion)
         {
             this._conversions.Remove(conversion);
         }

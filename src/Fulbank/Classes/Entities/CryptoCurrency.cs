@@ -46,11 +46,11 @@ public class CryptoCurrency : Meta
     #endregion
     
     #region Fonctions
-        public void addWallet(Wallet wallet)
+        public void linkWallet(Wallet wallet)
         {
             this._wallets.Add(wallet);
         }
-        public void removeWallet(Wallet wallet)
+        public void unlinkWallet(Wallet wallet)
         {
             this._wallets.Remove(wallet);
         }

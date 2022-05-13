@@ -56,11 +56,11 @@ public class UserType : Meta
     #endregion
 
     #region Fonctions
-        public void addUser(User user)
+        public void linkUser(User user)
         {
             this._users.Add(user);
         }
-        public void removeUser(User user)
+        public void unlinkUser(User user)
         {
             this._users.Remove(user);
         }

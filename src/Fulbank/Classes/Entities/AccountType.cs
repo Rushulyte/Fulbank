@@ -76,11 +76,11 @@ public class AccountType : Meta
     #endregion
     
     #region Fonctions
-        public void addAccount(BankAccount account)
+        public void linkAccount(BankAccount account)
         {
             this._accounts.Add(account);
         }
-        public void removeAccount(BankAccount account)
+        public void unlinkAccount(BankAccount account)
         {
             this._accounts.Remove(account);
         }
