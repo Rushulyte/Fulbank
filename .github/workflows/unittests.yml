@@ -1,0 +1,33 @@
+name: Unittests
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        name: Checkout Code
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+    
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+
+      - name: Restore dependencies
+        run: nuget restore src/Fulbank.sln
+
+      - name: Build
+        run: msbuild src/Fulbank.sln
+
+      - name: Test
+        run: dotnet test --no-build --verbosity normal src
