@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using Fulbank.entities;
+using Fulbank.Pages;
 
 namespace Fulbank
 {

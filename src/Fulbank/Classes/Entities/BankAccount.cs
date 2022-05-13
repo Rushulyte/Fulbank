@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
-public class BankAccount : MoneyInterface Meta
+public class BankAccount : MoneyInterface
 {
     #region Attributes
         private string _iban;
@@ -15,40 +15,40 @@ public class BankAccount : MoneyInterface Meta
     #region Constructor
         public BankAccount(int id, double balance, DateTime createdDate, string iban, AccountType accountType, User user) : base(id, balance, createdDate, user)
         {
-            this.setIban(iban);
-            this.setAccountType(accountType);
-            this._operations = new Collection<Operation>();
-            this._conversions = new Collection<Conversion>();
+            setIban(iban);
+            setAccountType(accountType);
+            _operations = new Collection<Operation>();
+            _conversions = new Collection<Conversion>();
         }
     #endregion
     
     #region Getters
         public string getIban()
         {
-            return this._iban;
+            return _iban;
         }
         public AccountType getAccountType()
         {
-            return this._accountType;
+            return _accountType;
         }
         public Collection<Operation> getOperations()
         {
-            return this._operations;
+            return _operations;
         }
         public Collection<Conversion> getConversions()
         {
-            return this._conversions;
+            return _conversions;
         }
     #endregion
     
     #region Setters
         public void setIban(string iban)
         {
-            this._iban = iban;
+            _iban = iban;
         }
         public void setAccountType(AccountType accountType)
         {
-            this._accountType = accountType;
+            _accountType = accountType;
         }
     #endregion
     
@@ -56,21 +56,21 @@ public class BankAccount : MoneyInterface Meta
         // Operations
         public void linkOperation(Operation operation)
         {
-            this._operations.Add(operation);
+            _operations.Add(operation);
         }
         public void unlinkOperation(Operation operation)
         {
-            this._operations.Remove(operation);
+            _operations.Remove(operation);
         }
         
         // Conversions
         public void linkConversion(Conversion conversion)
         {
-            this._conversions.Add(conversion);
+            _conversions.Add(conversion);
         }
         public void unlinkConversion(Conversion conversion)
         {
-            this._conversions.Remove(conversion);
+            _conversions.Remove(conversion);
         }
     #endregion
 }

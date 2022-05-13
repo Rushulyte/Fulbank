@@ -1,7 +1,7 @@
 ﻿using System;
 
-namespace Fulbank.entities;
-public class ExternalOperation : Operation Meta
+namespace Fulbank.Classes.Entities;
+public class ExternalOperation : Operation
 {
     #region Attributes
         private string _targetRib;
@@ -10,21 +10,21 @@ public class ExternalOperation : Operation Meta
     #region Constructor
         public ExternalOperation(int id, double amount, DateTime createdDate, string targetRib, BankAccount origin) : base(id, amount, createdDate, origin)
         {
-            this.setTargetRib(targetRib);
+            setTargetRib(targetRib);
         }
     #endregion
     
     #region Getters
         public string getTargetRib()
         {
-            return this._targetRib;
+            return _targetRib;
         }
     #endregion
     
     #region Setters
         public void setTargetRib(string targetRib)
         {
-            this._targetRib = targetRib;
+            _targetRib = targetRib;
         }
     #endregion
 }

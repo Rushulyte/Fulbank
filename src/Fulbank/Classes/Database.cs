@@ -1,8 +1,9 @@
 using System;
+using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Fulbank.entities
+namespace Fulbank.Classes
 {
     public class Database
     {
@@ -18,18 +19,18 @@ namespace Fulbank.entities
         #region Constructor
             public Database()
             {
-                this._db = "fulbank";
-                this._user = "root";
-                this._psswd = "''";
-                this._host = "localhost";
-                this._data = "server=" + this._host + ";database=" + this._db + ";uid=" + this._user + ";password=" + this._psswd + ";SSL MODE='None'";
+                _db = "fulbank";
+                _user = "root";
+                _psswd = "''";
+                _host = "localhost";
+                _data = "server=" + _host + ";database=" + _db + ";uid=" + _user + ";password=" + _psswd + ";SSL MODE='None'";
             }
         #endregion
         
         #region Getters
             public MySqlConnection getConnection()
             {
-                return this._conn;
+                return _conn;
             }
         #endregion
         
@@ -39,11 +40,11 @@ namespace Fulbank.entities
             {
                 try
                 {
-                    this._conn = new MySqlConnection(this._data);
+                    _conn = new MySqlConnection(_data);
                 }
                 catch (MySqlException e)
                 {
-                    MessageBox.Show("#ERROR# Can't connect to the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't connect to the database : " + e);
                 }
             }
             public void openConnection(MySqlConnection sql)
@@ -54,7 +55,7 @@ namespace Fulbank.entities
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("#ERROR# Can't open the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't open the database : " + e);
                 }
             }
             public void closeConnection(MySqlConnection sql)
@@ -65,22 +66,22 @@ namespace Fulbank.entities
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("#ERROR# Can't close the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't close the database : " + e);
                 }
             }
 
             // Fonctions
             private string ToStr(Collection<string> list)
             {
-                // TODO
+                return default;
             }
             private Collection<string> ToList(string str)
             {
-                // TODO
+                return default;
             }
-            private void verifyQuery(string query)
+            private bool verifyQuery(string query)
             {
-                // TODO
+                return true;
             }
 
             // Queries
@@ -92,7 +93,7 @@ namespace Fulbank.entities
                 // query.CommandText = "INSERT INTO " + table + ToStr(properties) + " VALUES" + ToStr(values);
                 query.CommandText = "INSERT INTO " + table + "(" + properties[0] + ", " + properties[1] + ", " + properties[2] + ") VALUES(" + values[0] + ", " + values[1] + ", " + values[2] + ")";
                 
-                if verifyQuery(query)
+                if (verifyQuery(query.ToString()))
                 {
                     query.ExecuteNonQuery();
                 }

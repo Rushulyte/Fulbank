@@ -1,5 +1,7 @@
 ﻿using Newtonsoft.Json;
 
+namespace APITest;
+
 public class APIResponse
 {
     public Currency Data;

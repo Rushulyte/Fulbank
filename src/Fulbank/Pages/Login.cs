@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace Fulbank
+namespace Fulbank.Pages
 {
     public partial class Login : Form
     {
@@ -12,9 +12,9 @@ namespace Fulbank
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register Register = new Register();
-            Register.Show();
-            this.Hide();
+            Register registerPage = new();
+            registerPage.Show();
+            Hide();
         }
         
         private void Login_Closing(object sender, EventArgs e)
