@@ -1,4 +1,4 @@
-﻿namespace Fulbank
+﻿namespace Fulbank.Pages
 {
     partial class Home
     {

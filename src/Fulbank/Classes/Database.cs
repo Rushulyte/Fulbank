@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Fulbank.entities
+namespace Fulbank.Classes
 {
     public class Database
     {

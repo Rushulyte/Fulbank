@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Dynamic;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public abstract class MoneyInterface : Meta
 {

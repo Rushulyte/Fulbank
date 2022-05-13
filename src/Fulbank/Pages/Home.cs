@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Fulbank
+namespace Fulbank.Pages
 {
     public partial class Home : Form
     {

@@ -1,4 +1,4 @@
-namespace Fulbank.entities;
+namespace Fulbank.Classes;
 
 public abstract class Meta
 {

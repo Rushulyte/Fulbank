@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public abstract class Operation : Meta
 {

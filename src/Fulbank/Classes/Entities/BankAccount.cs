@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public class BankAccount : MoneyInterface
 {
