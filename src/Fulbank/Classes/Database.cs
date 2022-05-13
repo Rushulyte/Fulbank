@@ -73,15 +73,15 @@ namespace Fulbank.entities
             // Fonctions
             private string ToStr(Collection<string> list)
             {
-                // TODO
+                return default;
             }
             private Collection<string> ToList(string str)
             {
-                // TODO
+                return default;
             }
-            private void verifyQuery(string query)
+            private bool verifyQuery(string query)
             {
-                // TODO
+                return true;
             }
 
             // Queries
@@ -93,7 +93,7 @@ namespace Fulbank.entities
                 // query.CommandText = "INSERT INTO " + table + ToStr(properties) + " VALUES" + ToStr(values);
                 query.CommandText = "INSERT INTO " + table + "(" + properties[0] + ", " + properties[1] + ", " + properties[2] + ") VALUES(" + values[0] + ", " + values[1] + ", " + values[2] + ")";
                 
-                if (verifyQuery(query))
+                if (verifyQuery(query.ToString()))
                 {
                     query.ExecuteNonQuery();
                 }
