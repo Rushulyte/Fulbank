@@ -13,7 +13,7 @@ public abstract class MoneyInterface
     #endregion
     
     #region Constructor
-        protected MoneyInterface(int id, double balance, DateTime createdDate, User user)
+        public MoneyInterface(int id, double balance, DateTime createdDate, User user)
         {
             this.setId(id);
             this.setBalance(balance);
