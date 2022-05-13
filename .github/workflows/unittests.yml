@@ -1,11 +1,5 @@
-name: .NET
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+name: Unittests
+on: [pull_request, push]
 jobs:
   build:
     
