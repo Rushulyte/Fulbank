@@ -2,7 +2,7 @@
 
 namespace Fulbank.Classes.Entities;
 
-public abstract class MoneyInterface : Meta
+public abstract class MoneyInterface
 {
     #region Attributes
         private int _id;

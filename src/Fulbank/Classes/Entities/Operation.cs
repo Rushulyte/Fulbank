@@ -2,7 +2,7 @@
 
 namespace Fulbank.Classes.Entities;
 
-public abstract class Operation : Meta
+public abstract class Operation
 {
     #region Attributes
         private int _id;
