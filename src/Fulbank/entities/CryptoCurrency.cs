@@ -15,6 +15,7 @@ public class CryptoCurrency
         {
             this.setId(id);
             this.setName(name);
+            this._wallets = new Collection<Wallet>();
         }
     #endregion
     

@@ -17,6 +17,7 @@ public class UserType
             this.setId(id);
             this.setName(name);
             this.setRole(role);
+            this._users = new Collection<User>();
         }
     #endregion
     

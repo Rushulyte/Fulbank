@@ -21,6 +21,7 @@ public class AccountType
             this.setDescription(description);
             this.setInterest(interest);
             this.setCeil(ceil);
+            this._accounts = new Collection<BankAccount>();
         }
     #endregion
     
