@@ -74,6 +74,7 @@
         <Compile Include="Classes\Entities\User.cs" />
         <Compile Include="Classes\Entities\UserType.cs" />
         <Compile Include="Classes\Entities\Wallet.cs" />
+        <Compile Include="Classes\Meta.cs" />
         <Compile Include="Pages\Home.cs">
           <SubType>Form</SubType>
         </Compile>
