@@ -19,5 +19,5 @@ __pycache__
 # Environment variables
 .env
 
-# Nugget package
-src/package
+# Nugget packages
+src/packages
