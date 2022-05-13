@@ -2,7 +2,7 @@
 
 namespace Fulbank.entities;
 
-public class InternalOperation : Operation Meta
+public class InternalOperation : Operation, Meta
 {
     #region Attributes
         private BankAccount _target;

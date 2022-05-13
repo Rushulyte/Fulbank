@@ -92,7 +92,7 @@ namespace Fulbank.entities
                 // query.CommandText = "INSERT INTO " + table + ToStr(properties) + " VALUES" + ToStr(values);
                 query.CommandText = "INSERT INTO " + table + "(" + properties[0] + ", " + properties[1] + ", " + properties[2] + ") VALUES(" + values[0] + ", " + values[1] + ", " + values[2] + ")";
                 
-                if verifyQuery(query)
+                if (verifyQuery(query))
                 {
                     query.ExecuteNonQuery();
                 }
