@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Fulbank.entities;
 
-public class Wallet : MoneyInterface, Meta
+public class Wallet : MoneyInterface
 {
     #region Attributes
         private CryptoCurrency _crypto;
