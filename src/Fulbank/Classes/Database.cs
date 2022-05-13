@@ -35,9 +35,8 @@ namespace Fulbank.Classes
             }
         #endregion
         
-        #region Fonctions
-            // Connection
-            public void createConnection()
+        #region Connection
+        public void createConnection()
             {
                 try
                 {
@@ -70,8 +69,9 @@ namespace Fulbank.Classes
                     MessageBox.Show("#ERROR# Can't close the database : " + e);
                 }
             }
+        #endregion
 
-            // Fonctions
+        #region Fonctions
             private string ToStr(Collection<string> list)
             {
                 string result = list[0];
@@ -81,29 +81,38 @@ namespace Fulbank.Classes
                 }
                 return result;
             }
-            public string[] ToList(string str)
+            private string[] ToList(string str)
             {
                 Collection<string> result = new Collection<string>();
                 return str.Split(',');
             }
-            private bool verifyQuery(string query)
+            private string ToBind(Collection<string> list)
             {
-                return true;
+                string result = "@val1";
+                for (int i = 1 ; i < list.Count; i++ )
+                {
+                    result += "," + "@val" + (i + 1);
+                }
+                return result;
             }
-
-            // Queries
+        #endregion
+        
+        #region Queries
+            private void execute(MySqlCommand command, string[] bindvalues, Collection<string> values)
+            {
+                for (int i = 0 ; i < bindvalues.Length ; i++)
+                {
+                    command.Parameters.AddWithValue(bindvalues[i],values[i]);
+                }
+                command.Prepare();
+                command.ExecuteReader();
+            }
+            
             public void insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
             {
-                var query = new MySqlCommand();
-                query.Connection = sql;
-
-                // query.CommandText = "INSERT INTO " + table + ToStr(properties) + " VALUES" + ToStr(values);
-                query.CommandText = "INSERT INTO " + table + "(" + properties[0] + ", " + properties[1] + ", " + properties[2] + ") VALUES(" + values[0] + ", " + values[1] + ", " + values[2] + ")";
-                
-                if (verifyQuery(query.ToString()))
-                {
-                    query.ExecuteNonQuery();
-                }
+                string bindValues = ToBind(values);
+                MySqlCommand query = new MySqlCommand("INSERT INTO " + table + " (" + ToStr(properties) + ") VALUES" + " (" + bindValues + ");", sql);
+                execute(query, ToList(bindValues), values);
             }
         #endregion
     }
