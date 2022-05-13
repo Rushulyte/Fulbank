@@ -1,4 +1,6 @@
-﻿namespace Fulbank.entities;
+﻿using System.Collections.ObjectModel;
+
+namespace Fulbank.entities;
 
 public class UserType
 {
@@ -6,6 +8,7 @@ public class UserType
         private int _id;
         private string _name;
         private string _role;
+        private Collection<User> _users;
     #endregion
     
     #region Constructor
@@ -30,6 +33,10 @@ public class UserType
         {
             return this._role;
         }
+        public Collection<User> getUsers()
+        {
+            return this._users;
+        }
     #endregion
     
     #region Setters
@@ -44,6 +51,17 @@ public class UserType
         public void setRole(string role)
         {
             this._role = role;
+        }
+    #endregion
+
+    #region Fonctions
+        public void addUser(User user)
+        {
+            this._users.Add(user);
+        }
+        public void removeUser(User user)
+        {
+            this._users.Remove(user);
         }
     #endregion
 }

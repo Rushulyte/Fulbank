@@ -7,7 +7,7 @@ public class ExternalOperation : Operation
     #endregion
 
     #region Constructor
-        public ExternalOperation(int id, double amount, DateTime createdDate, string targetRib) : base(id, amount, createdDate)
+        public ExternalOperation(int id, double amount, DateTime createdDate, string targetRib, BankAccount origin) : base(id, amount, createdDate, origin)
         {
             this.setTargetRib(targetRib);
         }

@@ -1,4 +1,6 @@
-﻿namespace Fulbank.entities;
+﻿using System.Collections.ObjectModel;
+
+namespace Fulbank.entities;
 
 public class AccountType
 {
@@ -8,6 +10,7 @@ public class AccountType
         private string _description;
         private double _interest;
         private double _ceil;
+        private Collection<BankAccount> _accounts;
     #endregion
     
     #region Constructor
@@ -42,6 +45,10 @@ public class AccountType
         {
             return this._ceil;
         }
+        public Collection<BankAccount> getAccounts()
+        {
+            return this._accounts;
+        }
     #endregion
     
     #region Setters
@@ -64,6 +71,17 @@ public class AccountType
         public void setCeil(double ceil)
         {
             this._ceil = ceil;
+        }
+    #endregion
+    
+    #region Fonctions
+        public void addAccount(BankAccount account)
+        {
+            this._accounts.Add(account);
+        }
+        public void removeAccount(BankAccount account)
+        {
+            this._accounts.Remove(account);
         }
     #endregion
 }

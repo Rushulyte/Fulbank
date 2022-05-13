@@ -1,4 +1,6 @@
-﻿namespace Fulbank.entities;
+﻿using System.Collections.ObjectModel;
+
+namespace Fulbank.entities;
 
 public class User
 {
@@ -12,11 +14,13 @@ public class User
         private string _address;
         private string _salt;
         private DateTime _createdDate;
+        private UserType _type;
+        private Collection<MoneyInterface> _accounts;
     #endregion
     
     #region Constructor
         public User(int id, string firstname, string lastname, string email, string authenticationString, string phone,
-            string address, string salt, DateTime createdDate)
+            string address, string salt, DateTime createdDate, UserType type)
         {
             this.setId(id);
             this.setFirstname(firstname);
@@ -27,6 +31,7 @@ public class User
             this.setAddress(address);
             this.setSalt(salt);
             this.setCreatedDate(createdDate);
+            this.setType(type);
         }
     #endregion
     
@@ -67,6 +72,14 @@ public class User
         {
             return this._createdDate;
         }
+        public UserType getType()
+        {
+            return this._type;
+        }
+        public Collection<MoneyInterface> getAccounts()
+        {
+            return this._accounts;
+        }
     #endregion
     
     #region Setters
@@ -105,6 +118,21 @@ public class User
         public void setCreatedDate(DateTime createdDate)
         {
             this._createdDate = createdDate;
+        }
+        public void setType(UserType type)
+        {
+            this._type = type;
+        }
+    #endregion
+    
+    #region Fonctions
+        public void addAccount(MoneyInterface account)
+        {
+            this._accounts.Add(account);
+        }
+        public void removeAccount(MoneyInterface account)
+        {
+            this._accounts.Remove(account);
         }
     #endregion
 }

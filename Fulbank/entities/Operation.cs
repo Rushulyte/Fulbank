@@ -8,14 +8,16 @@ public abstract class Operation
         private int _id;
         private double _amount;
         private DateTime _createdDate;
+        private BankAccount _Account;
     #endregion
     
     #region Constructor
-        protected Operation(int id, double amount, DateTime createdDate)
+    protected Operation(int id, double amount, DateTime createdDate, BankAccount account)
         {
             this.setId(id);
             this.setAmount(amount);
             this.setCreatedDate(createdDate);
+            this.setAccount(account);
         }
     #endregion
     
@@ -32,6 +34,10 @@ public abstract class Operation
         {
             return _createdDate;
         }
+        public BankAccount getAccount()
+        {
+            return this._Account;
+        }
     #endregion
     
     #region Setters
@@ -46,6 +52,10 @@ public abstract class Operation
         public void setCreatedDate(DateTime createdDate)
         {
             this._createdDate = createdDate;
+        }
+        public void setAccount(BankAccount account)
+        {
+            this._Account = account;
         }
     #endregion
 }

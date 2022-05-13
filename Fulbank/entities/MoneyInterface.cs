@@ -9,14 +9,16 @@ public abstract class MoneyInterface
         private int _id;
         private double _balance;
         private DateTime _createdDate;
+        private User _user;
     #endregion
     
     #region Constructor
-        protected MoneyInterface(int id, double balance, DateTime createdDate)
+        protected MoneyInterface(int id, double balance, DateTime createdDate, User user)
         {
             this.setId(id);
             this.setBalance(balance);
             this.setCreatedDate(createdDate);
+            this.setUser(user);
         }
     #endregion
     
@@ -33,6 +35,10 @@ public abstract class MoneyInterface
         {
             return _createdDate;
         }
+        public User getUser()
+        {
+            return this._user;
+        }
     #endregion
     
     #region Setters
@@ -47,6 +53,10 @@ public abstract class MoneyInterface
         public void setCreatedDate(DateTime createdDate)
         {
             this._createdDate = createdDate;
+        }
+        public void setUser(User user)
+        {
+            this._user = user;
         }
     #endregion
 }
