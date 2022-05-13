@@ -8,7 +8,7 @@ public abstract class Operation
         private int _id;
         private double _amount;
         private DateTime _createdDate;
-        private BankAccount _Account;
+        private BankAccount _account;
     #endregion
     
     #region Constructor
@@ -36,7 +36,7 @@ public abstract class Operation
         }
         public BankAccount getAccount()
         {
-            return this._Account;
+            return this._account;
         }
     #endregion
     
@@ -55,7 +55,7 @@ public abstract class Operation
         }
         public void setAccount(BankAccount account)
         {
-            this._Account = account;
+            this._account = account;
         }
     #endregion
 }
