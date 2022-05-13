@@ -19,18 +19,18 @@ namespace Fulbank.Classes
         #region Constructor
             public Database()
             {
-                this._db = "fulbank";
-                this._user = "root";
-                this._psswd = "''";
-                this._host = "localhost";
-                this._data = "server=" + this._host + ";database=" + this._db + ";uid=" + this._user + ";password=" + this._psswd + ";SSL MODE='None'";
+                _db = "fulbank";
+                _user = "root";
+                _psswd = "''";
+                _host = "localhost";
+                _data = "server=" + _host + ";database=" + _db + ";uid=" + _user + ";password=" + _psswd + ";SSL MODE='None'";
             }
         #endregion
         
         #region Getters
             public MySqlConnection getConnection()
             {
-                return this._conn;
+                return _conn;
             }
         #endregion
         
@@ -40,11 +40,11 @@ namespace Fulbank.Classes
             {
                 try
                 {
-                    this._conn = new MySqlConnection(this._data);
+                    _conn = new MySqlConnection(_data);
                 }
                 catch (MySqlException e)
                 {
-                    MessageBox.Show("#ERROR# Can't connect to the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't connect to the database : " + e);
                 }
             }
             public void openConnection(MySqlConnection sql)
@@ -55,7 +55,7 @@ namespace Fulbank.Classes
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("#ERROR# Can't open the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't open the database : " + e);
                 }
             }
             public void closeConnection(MySqlConnection sql)
@@ -66,7 +66,7 @@ namespace Fulbank.Classes
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("#ERROR# Can't close the database : " + e.ToString());
+                    MessageBox.Show("#ERROR# Can't close the database : " + e);
                 }
             }
 
