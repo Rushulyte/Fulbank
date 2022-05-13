@@ -34,6 +34,7 @@ namespace Fulbank.entities
         #endregion
         
         #region Fonctions
+            // Connection
             public void createConnection()
             {
                 try
@@ -45,7 +46,6 @@ namespace Fulbank.entities
                     MessageBox.Show("#ERROR# Can't connect to the database : " + e.ToString());
                 }
             }
-            
             public void openConnection(MySqlConnection sql)
             {
                 try
@@ -57,8 +57,6 @@ namespace Fulbank.entities
                     MessageBox.Show("#ERROR# Can't open the database : " + e.ToString());
                 }
             }
-            
-            
             public void closeConnection(MySqlConnection sql)
             {
                 try
@@ -71,21 +69,21 @@ namespace Fulbank.entities
                 }
             }
 
+            // Fonctions
             private string ToStr(Collection<string> list)
             {
                 // TODO
             }
-
             private Collection<string> ToList(string str)
             {
                 // TODO
             }
-
             private void verifyQuery(string query)
             {
                 // TODO
             }
 
+            // Queries
             public void insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
             {
                 var query = new MySqlCommand();
