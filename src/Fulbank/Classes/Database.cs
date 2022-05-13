@@ -70,7 +70,35 @@ namespace Fulbank.entities
                     MessageBox.Show("#ERROR# Can't close the database : " + e.ToString());
                 }
             }
-            
+
+            private string ToStr(Collection<string> list)
+            {
+                // TODO
+            }
+
+            private Collection<string> ToList(string str)
+            {
+                // TODO
+            }
+
+            private void verifyQuery(string query)
+            {
+                // TODO
+            }
+
+            public void insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
+            {
+                var query = new MySqlCommand();
+                query.Connection = sql;
+
+                // query.CommandText = "INSERT INTO " + table + ToStr(properties) + " VALUES" + ToStr(values);
+                query.CommandText = "INSERT INTO " + table + "(" + properties[0] + ", " + properties[1] + ", " + properties[2] + ") VALUES(" + values[0] + ", " + values[1] + ", " + values[2] + ")";
+                
+                if verifyQuery(query)
+                {
+                    query.ExecuteNonQuery();
+                }
+            }
         #endregion
     }
 }
