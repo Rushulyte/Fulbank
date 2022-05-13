@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 namespace Fulbank.entities;
 
@@ -32,6 +33,7 @@ public class User
             this.setSalt(salt);
             this.setCreatedDate(createdDate);
             this.setType(type);
+            this._accounts = new Collection<MoneyInterface>();
         }
     #endregion
     

@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 
 namespace Fulbank.entities;
 
@@ -16,6 +17,8 @@ public class BankAccount : MoneyInterface
         {
             this.setIban(iban);
             this.setAccountType(accountType);
+            this._operations = new Collection<Operation>();
+            this._conversions = new Collection<Conversion>();
         }
     #endregion
     

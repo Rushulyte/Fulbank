@@ -1,4 +1,6 @@
-﻿namespace Fulbank.entities;
+﻿using System;
+
+namespace Fulbank.entities;
 
 public class InternalOperation : Operation
 {

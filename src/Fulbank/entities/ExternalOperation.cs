@@ -1,5 +1,6 @@
-﻿namespace Fulbank.entities;
+﻿using System;
 
+namespace Fulbank.entities;
 public class ExternalOperation : Operation
 {
     #region Attributes
