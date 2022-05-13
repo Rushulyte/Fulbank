@@ -62,18 +62,18 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="entities\AccountType.cs" />
-        <Compile Include="entities\BankAccount.cs" />
-        <Compile Include="entities\Conversion.cs" />
-        <Compile Include="entities\CryptoCurrency.cs" />
-        <Compile Include="entities\Database.cs" />
-        <Compile Include="entities\ExternalOperation.cs" />
-        <Compile Include="entities\InternalOperation.cs" />
-        <Compile Include="entities\MoneyInterface.cs" />
-        <Compile Include="entities\Operation.cs" />
-        <Compile Include="entities\User.cs" />
-        <Compile Include="entities\UserType.cs" />
-        <Compile Include="entities\Wallet.cs" />
+        <Compile Include="Classes\Database.cs" />
+        <Compile Include="Classes\Entities\AccountType.cs" />
+        <Compile Include="Classes\Entities\BankAccount.cs" />
+        <Compile Include="Classes\Entities\Conversion.cs" />
+        <Compile Include="Classes\Entities\CryptoCurrency.cs" />
+        <Compile Include="Classes\Entities\ExternalOperation.cs" />
+        <Compile Include="Classes\Entities\InternalOperation.cs" />
+        <Compile Include="Classes\Entities\MoneyInterface.cs" />
+        <Compile Include="Classes\Entities\Operation.cs" />
+        <Compile Include="Classes\Entities\User.cs" />
+        <Compile Include="Classes\Entities\UserType.cs" />
+        <Compile Include="Classes\Entities\Wallet.cs" />
         <Compile Include="Pages\Home.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -125,6 +125,9 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="entities" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
