@@ -104,17 +104,6 @@ py db/feeder/main.py
 
 ## Application
 
-### Ajouter les données de connexion
-
-Dans le fichier `Database.cs` situé dans le dossier `src/Fulbank/Classes/`, éditer les variables de connexion à la base de données 
-
-```cs
-_db = "fulbank";
-_user = "root";
-_psswd = "''";
-_host = "localhost";
-```
-
 ### Compilation
 
 Uiliser la commande suivante afin de compiler l'application. Cette dernière peut prendre une trentaine de secondes.
@@ -124,3 +113,7 @@ msbuild src/Fulbank/Fulbank.csproj /p:Configuration=Release  /t:rebuild /clp:Sho
  ```
 
 L'executable ce site dans le dossier `src/Fulbank/bin/Release`.
+
+### Ajouter les données de connexion
+
+Pour se connecter à la base de données l'utilisateur n'aura qu'à entrer les informations demandées lors de la première ouverture de l'application.
