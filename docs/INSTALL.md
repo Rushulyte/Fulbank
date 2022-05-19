@@ -116,4 +116,4 @@ L'executable ce site dans le dossier `src/Fulbank/bin/Release`.
 
 ### Ajouter les données de connexion
 
-Pour se connecter à la base de données l'utilisateur n'aura qu'à entrer les informations demandées lors de la première ouverture de l'application.
+Pour se connecter à la base de données l'utilisateur n'aura qu'à entrer les informations demandées à chaque ouverture de l'application (issue temporaire).
