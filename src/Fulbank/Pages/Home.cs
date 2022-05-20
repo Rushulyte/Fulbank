@@ -1,12 +1,11 @@
 ﻿using System.Windows.Forms;
 
-namespace Fulbank.Pages
+namespace Fulbank.Pages;
+
+public partial class Home : Form
 {
-    public partial class Home : Form
+    public Home()
     {
-        public Home()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

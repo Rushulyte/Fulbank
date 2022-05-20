@@ -23,116 +23,116 @@ public class User : Meta
         public User(int id, string firstname, string lastname, string email, string authenticationString, string phone,
             string address, string salt, DateTime createdDate, UserType type)
         {
-            setId(id);
-            setFirstname(firstname);
-            setLastname(lastname);
-            setEmail(email);
-            setAuthenticationString(authenticationString);
-            setPhone(phone);
-            setAddress(address);
-            setSalt(salt);
-            setCreatedDate(createdDate);
-            setType(type);
+            SetId(id);
+            SetFirstname(firstname);
+            SetLastname(lastname);
+            SetEmail(email);
+            SetAuthenticationString(authenticationString);
+            SetPhone(phone);
+            SetAddress(address);
+            SetSalt(salt);
+            SetCreatedDate(createdDate);
+            SetType(type);
             _accounts = new Collection<MoneyInterface>();
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public string getFirstname()
+        public string GetFirstname()
         {
             return _firstname;
         }
-        public string getLastname()
+        public string GetLastname()
         {
             return _lastname;
         }
-        public string getEmail()
+        public string GetEmail()
         {
             return _email;
         }
-        public string getAuthenticationString()
+        public string GetAuthenticationString()
         {
             return _authenticationString;
         }
-        public string getPhone()
+        public string GetPhone()
         {
             return _phone;
         }
-        public string getAddress()
+        public string GetAddress()
         {
             return _address;
         }
-        public string getSalt()
+        public string GetSalt()
         {
             return _salt;
         }
-        public DateTime getCreatedDate()
+        public DateTime GetCreatedDate()
         {
             return _createdDate;
         }
-        public UserType getType()
+        public UserType GetUserType()
         {
             return _type;
         }
-        public Collection<MoneyInterface> getAccounts()
+        public Collection<MoneyInterface> GetAccounts()
         {
             return _accounts;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setFirstname(string firstname)
+        public void SetFirstname(string firstname)
         {
             _firstname = firstname;
         }
-        public void setLastname(string lastname)
+        public void SetLastname(string lastname)
         {
             _lastname = lastname;
         }
-        public void setEmail(string email)
+        public void SetEmail(string email)
         {
             _email = email;
         }
-        public void setAuthenticationString(string auth_string)
+        public void SetAuthenticationString(string authString)
         {
-            _authenticationString = auth_string;
+            _authenticationString = authString;
         }
-        public void setPhone(string phone)
+        public void SetPhone(string phone)
         {
             _phone = phone;
         }
-        public void setAddress(string address)
+        public void SetAddress(string address)
         {
             _address = address;
         }
-        public void setSalt(string salt)
+        public void SetSalt(string salt)
         {
             _salt = salt;
         }
-        public void setCreatedDate(DateTime createdDate)
+        public void SetCreatedDate(DateTime createdDate)
         {
             _createdDate = createdDate;
         }
-        public void setType(UserType type)
+        public void SetType(UserType type)
         {
             _type = type;
         }
     #endregion
     
     #region Fonctions
-        public void linkAccount(MoneyInterface account)
+        public void LinkAccount(MoneyInterface account)
         {
             _accounts.Add(account);
         }
-        public void unlinkAccount(MoneyInterface account)
+        public void UnlinkAccount(MoneyInterface account)
         {
             _accounts.Remove(account);
         }

@@ -14,46 +14,46 @@ public abstract class Operation
     #region Constructor
     protected Operation(int id, double amount, DateTime createdDate, BankAccount account)
         {
-            setId(id);
-            setAmount(amount);
-            setCreatedDate(createdDate);
-            setAccount(account);
+            SetId(id);
+            SetAmount(amount);
+            SetCreatedDate(createdDate);
+            SetAccount(account);
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public double getAmount()
+        public double GetAmount()
         {
             return _amount;
         }
-        public DateTime getCreatedDate()
+        public DateTime GetCreatedDate()
         {
             return _createdDate;
         }
-        public BankAccount getAccount()
+        public BankAccount GetAccount()
         {
             return _account;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setAmount(double amount)
+        public void SetAmount(double amount)
         {
             _amount = amount;
         }
-        public void setCreatedDate(DateTime createdDate)
+        public void SetCreatedDate(DateTime createdDate)
         {
             _createdDate = createdDate;
         }
-        public void setAccount(BankAccount account)
+        public void SetAccount(BankAccount account)
         {
             _account = account;
         }

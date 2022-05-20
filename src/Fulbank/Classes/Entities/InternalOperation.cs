@@ -11,19 +11,19 @@ public class InternalOperation : Operation
     #region Constructor
         public InternalOperation(int id, double amount, DateTime createdDate, BankAccount origin, BankAccount target) : base(id, amount, createdDate, origin)
         {
-            setTarget(target);
+            SetTarget(target);
         }
     #endregion
     
     #region Getters
-        public BankAccount getTarget()
+        public BankAccount GetTarget()
         {
             return _target;
         }
     #endregion
     
     #region Setters
-        public void setTarget(BankAccount target)
+        public void SetTarget(BankAccount target)
         {
             _target = target;
         }

@@ -14,46 +14,46 @@ public abstract class MoneyInterface
     #region Constructor
         public MoneyInterface(int id, double balance, DateTime createdDate, User user)
         {
-            setId(id);
-            setBalance(balance);
-            setCreatedDate(createdDate);
-            setUser(user);
+            SetId(id);
+            SetBalance(balance);
+            SetCreatedDate(createdDate);
+            SetUser(user);
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public double getBalance()
+        public double GetBalance()
         {
             return _balance;
         }
-        public DateTime getCreatedDate()
+        public DateTime GetCreatedDate()
         {
             return _createdDate;
         }
-        public User getUser()
+        public User GetUser()
         {
             return _user;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setBalance(double balance)
+        public void SetBalance(double balance)
         {
             _balance = balance;
         }
-        public void setCreatedDate(DateTime createdDate)
+        public void SetCreatedDate(DateTime createdDate)
         {
             _createdDate = createdDate;
         }
-        public void setUser(User user)
+        public void SetUser(User user)
         {
             _user = user;
         }

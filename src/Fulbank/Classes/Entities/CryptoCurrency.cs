@@ -13,44 +13,44 @@ public class CryptoCurrency : Meta
     #region Constructor
         public CryptoCurrency(int id, string name)
         {
-            setId(id);
-            setName(name);
+            SetId(id);
+            SetName(name);
             _wallets = new Collection<Wallet>();
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public string getName()
+        public string GetName()
         {
             return _name;
         }
-        public Collection<Wallet> getWallets()
+        public Collection<Wallet> GetWallets()
         {
             return _wallets;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setName(string name)
+        public void SetName(string name)
         {
             _name = name;
         }
     #endregion
     
     #region Fonctions
-        public void linkWallet(Wallet wallet)
+        public void LinkWallet(Wallet wallet)
         {
             _wallets.Add(wallet);
         }
-        public void unlinkWallet(Wallet wallet)
+        public void UnlinkWallet(Wallet wallet)
         {
             _wallets.Remove(wallet);
         }

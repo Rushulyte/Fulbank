@@ -2,15 +2,25 @@
 
 namespace APITest;
 
-public class APIResponse
+public class ApiResponse
 {
-    public Currency Data;
+    public readonly Currency Data;
+    public ApiResponse(Currency data)
+    {
+        Data = data;
+    }
 }
 
 public class Currency
 {
-    public string currency;
-    public Dictionary<string, double> Rates;
+    public readonly string CurrencyName;
+    public readonly Dictionary<string, double> Rates;
+    
+    public Currency(string currency, Dictionary<string, double> rates)
+    {
+        CurrencyName = currency;
+        Rates = rates;
+    }
 }
 
 static class Program
@@ -21,7 +31,7 @@ static class Program
         HttpResponseMessage response = client.GetAsync("https://api.coinbase.com/v2/exchange-rates?currency=BTC").Result;
         
         string str = response.Content.ReadAsStringAsync().Result;
-        APIResponse? r = JsonConvert.DeserializeObject<APIResponse>(str);
+        ApiResponse? r = JsonConvert.DeserializeObject<ApiResponse>(str);
 
         if (r == null) return;
         float btcVal = (float)(r.Data.Rates["EUR"]);

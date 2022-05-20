@@ -11,19 +11,19 @@ public class ExternalOperation : Operation
     #region Constructor
         public ExternalOperation(int id, double amount, DateTime createdDate, string targetRib, BankAccount origin) : base(id, amount, createdDate, origin)
         {
-            setTargetRib(targetRib);
+            SetTargetRib(targetRib);
         }
     #endregion
     
     #region Getters
-        public string getTargetRib()
+        public string GetTargetRib()
         {
             return _targetRib;
         }
     #endregion
     
     #region Setters
-        public void setTargetRib(string targetRib)
+        public void SetTargetRib(string targetRib)
         {
             _targetRib = targetRib;
         }

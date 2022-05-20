@@ -15,55 +15,55 @@ public class Conversion : Meta
     #region Constructor
         public Conversion(int id, double amount, DateTime createdDate, BankAccount account, Wallet wallet)
         {
-            setId(id);
-            setAmount(amount);
-            setCreatedDate(createdDate);
-            setAccount(account);
-            setWallet(wallet);
+            SetId(id);
+            SetAmount(amount);
+            SetCreatedDate(createdDate);
+            SetAccount(account);
+            SetWallet(wallet);
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public double getAmount()
+        public double GetAmount()
         {
             return _amount;
         }
-        public DateTime getCreatedDate()
+        public DateTime GetCreatedDate()
         {
             return _createdDate;
         }
-        public BankAccount getAccount()
+        public BankAccount GetAccount()
         {
             return _account;
         }
-        public Wallet getWallet()
+        public Wallet GetWallet()
         {
             return _wallet;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setAmount(double amount)
+        public void SetAmount(double amount)
         {
             _amount = amount;
         }
-        public void setCreatedDate(DateTime createdDate)
+        public void SetCreatedDate(DateTime createdDate)
         {
             _createdDate = createdDate;
         }
-        public void setAccount(BankAccount account)
+        public void SetAccount(BankAccount account)
         {
             _account = account;
         }
-        public void setWallet(Wallet wallet)
+        public void SetWallet(Wallet wallet)
         {
             _wallet = wallet;
         }

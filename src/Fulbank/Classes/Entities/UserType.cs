@@ -14,53 +14,53 @@ public class UserType : Meta
     #region Constructor
         public UserType(int id, string name, string role)
         {
-            setId(id);
-            setName(name);
-            setRole(role);
+            SetId(id);
+            SetName(name);
+            SetRole(role);
             _users = new Collection<User>();
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public string getName()
+        public string GetName()
         {
             return _name;
         }
-        public string getRole()
+        public string GetRole()
         {
             return _role;
         }
-        public Collection<User> getUsers()
+        public Collection<User> GetUsers()
         {
             return _users;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setName(string name)
+        public void SetName(string name)
         {
             _name = name;
         }
-        public void setRole(string role)
+        public void SetRole(string role)
         {
             _role = role;
         }
     #endregion
 
     #region Fonctions
-        public void linkUser(User user)
+        public void LinkUser(User user)
         {
             _users.Add(user);
         }
-        public void unlinkUser(User user)
+        public void UnlinkUser(User user)
         {
             _users.Remove(user);
         }

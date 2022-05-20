@@ -6,7 +6,7 @@ namespace Fulbank.Pages;
 
 public partial class Connection : Form
 {
-    public Database db = new Database();
+    public Database Db = new Database();
     
     public Connection()
     {
@@ -20,17 +20,15 @@ public partial class Connection : Form
 
     private void buttonConnect_Click(object sender, EventArgs e)
     {
-        db.setName(nameTextBox.Text);
-        db.setHost(hostTextBox.Text);
-        db.setUser(userTextBox.Text);
-        db.setPassword(psswdTextBox.Text);
-        db.createConnection();
-        if (db.testConnection(db.getConnection()))
-        {
-            Login loginPage = new();
-            loginPage.Show();
-            Hide();
-        }
+        Db.SetName(nameTextBox.Text);
+        Db.SetHost(hostTextBox.Text);
+        Db.SetUser(userTextBox.Text);
+        Db.SetPassword(psswdTextBox.Text);
+        Db.CreateConnection();
+        if (!Db.TestConnection(Db.GetConnection())) return;
+        Login loginPage = new();
+        loginPage.Show();
+        Hide();
     }
 
     private void buttonCancel_Click(object sender, EventArgs e)

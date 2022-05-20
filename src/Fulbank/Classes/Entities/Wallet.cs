@@ -11,19 +11,19 @@ public class Wallet : MoneyInterface
     #region Constructor
         public Wallet(int id, double balance, DateTime createdDate, User user, CryptoCurrency crypto) : base(id, balance, createdDate, user)
         {
-            setCrypto(crypto);
+            SetCrypto(crypto);
         }
     #endregion
     
     #region Getters
-        public CryptoCurrency getCrypto()
+        public CryptoCurrency GetCrypto()
         {
             return _crypto;
         }
     #endregion
     
     #region Setters
-        public void setCrypto(CryptoCurrency crypto)
+        public void SetCrypto(CryptoCurrency crypto)
         {
             _crypto = crypto;
         }

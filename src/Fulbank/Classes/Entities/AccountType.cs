@@ -16,71 +16,71 @@ public class AccountType : Meta
     #region Constructor
         public AccountType(int id, string name, string description, double interest, double ceil)
         {
-            setId(id);
-            setName(name);
-            setDescription(description);
-            setInterest(interest);
-            setCeil(ceil);
+            SetId(id);
+            SetName(name);
+            SetDescription(description);
+            SetInterest(interest);
+            SetCeil(ceil);
             _accounts = new Collection<BankAccount>();
         }
     #endregion
     
     #region Getters
-        public int getId()
+        public int GetId()
         {
             return _id;
         }
-        public string getName()
+        public string GetName()
         {
             return _name;
         }
-        public string getDescription()
+        public string GetDescription()
         {
             return _description;
         }
-        public double getInterest()
+        public double GetInterest()
         {
             return _interest;
         }
-        public double getCeil()
+        public double GetCeil()
         {
             return _ceil;
         }
-        public Collection<BankAccount> getAccounts()
+        public Collection<BankAccount> GetAccounts()
         {
             return _accounts;
         }
     #endregion
     
     #region Setters
-        public void setId(int id)
+        public void SetId(int id)
         {
             _id = id;
         }
-        public void setName(string name)
+        public void SetName(string name)
         {
             _name = name;
         }
-        public void setDescription(string description)
+        public void SetDescription(string description)
         {
             _description = description;
         }
-        public void setInterest(double interest)
+        public void SetInterest(double interest)
         {
             _interest = interest;
         }
-        public void setCeil(double ceil)
+        public void SetCeil(double ceil)
         {
             _ceil = ceil;
         }
     #endregion
     
     #region Fonctions
-        public void linkAccount(BankAccount account)
+        public void LinkAccount(BankAccount account)
         {
             _accounts.Add(account);
         }
-        public void unlinkAccount(BankAccount account)
+        public void UnlinkAccount(BankAccount account)
         {
             _accounts.Remove(account);
         }

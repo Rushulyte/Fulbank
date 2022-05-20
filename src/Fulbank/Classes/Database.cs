@@ -1,136 +1,135 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-namespace Fulbank.Classes
+namespace Fulbank.Classes;
+
+public class Database
 {
-    public class Database
-    {
         #region Attributes
-            private string _db;
-            private string _user;
-            private string _psswd;
-            private string _host;
-            private MySqlConnection _conn;
+    private string _db;
+    private string _user;
+    private string _password;
+    private string _host;
+    private MySqlConnection _conn;
         #endregion
 
         #region Getters
-            public string getName()
-            {
-                return _db;
-            }
-            public string getUser()
-            {
-                return _user;
-            }
-            public string getPassword()
-            {
-                return _psswd;
-            }
-            public string getHost()
-            {
-                return _host;
-            }
-            public MySqlConnection getConnection()
-            {
-                return _conn;
-            }
+    public string GetName()
+    {
+        return _db;
+    }
+    public string GetUser()
+    {
+        return _user;
+    }
+    public string GetPassword()
+    {
+        return _password;
+    }
+    public string GetHost()
+    {
+        return _host;
+    }
+    public MySqlConnection GetConnection()
+    {
+        return _conn;
+    }
         #endregion
         
         #region Setters
-            public void setName(string name)
-            {
-                _db = name;
-            }
-            public void setUser(string user)
-            {
-                _user = user;
-            }
-            public void setPassword(string password)
-            {
-                _psswd = password;
-            }
-            public void setHost(string host)
-            {
-                _host = host;
-            }
+    public void SetName(string name)
+    {
+        _db = name;
+    }
+    public void SetUser(string user)
+    {
+        _user = user;
+    }
+    public void SetPassword(string password)
+    {
+        _password = password;
+    }
+    public void SetHost(string host)
+    {
+        _host = host;
+    }
         #endregion
         
         #region Connection
-            public void createConnection()
-            {
-                _conn = new MySqlConnection("server=" + _host + ";database=" + _db + ";uid=" + _user + ";password=" + _psswd + ";SSL MODE='None'");
-            }
-            public void openConnection(MySqlConnection sql)
-            {
-                sql.Open();
-            }
-            public void closeConnection(MySqlConnection sql)
-            {
-                sql.Close();
-            }
-            public bool testConnection(MySqlConnection sql)
-            {
-                try
-                {
-                    openConnection(sql);
-                    closeConnection(sql);
-                    MessageBox.Show("Database connected");
-                    return true;
-                }
-                catch(Exception e)
-                {
-                    MessageBox.Show("#ERROR# Can't connect to the database : " + e);
-                    return false;
-                }
-            }
+    public void CreateConnection()
+    {
+        _conn = new MySqlConnection($"server={_host};database={_db};uid={_user};password={_password};SSL MODE='None'");
+    }
+    public static void OpenConnection(MySqlConnection sql)
+    {
+        sql.Open();
+    }
+    public static void CloseConnection(MySqlConnection sql)
+    {
+        sql.Close();
+    }
+    public bool TestConnection(MySqlConnection sql)
+    {
+        try
+        {
+            OpenConnection(sql);
+            CloseConnection(sql);
+            MessageBox.Show(@"Database connected");
+            return true;
+        }
+        catch(Exception e)
+        {
+            MessageBox.Show($@"#ERROR# Can't connect to the database : {e}");
+            return false;
+        }
+    }
         #endregion
 
         #region Fonctions
-            private string ToStr(Collection<string> list)
-            {
-                StringBuilder result = new StringBuilder(list[0]);
-                for (int i = 1 ; i < list.Count; i++ )
-                {
-                    result.Append("," + list[i]);
-                }
-                return result.ToString();
-            }
-            private string[] ToList(string str)
-            {
-                return str.Split(',');
-            }
-            private string ToBind(Collection<string> list)
-            {
-                StringBuilder result = new StringBuilder("@val1"); 
-                for (int i = 1 ; i < list.Count; i++ )
-                {
-                    result.Append(",@val" + (i + 1));
-                }
-                return result.ToString();
-            }
+    private static string ToStr(IReadOnlyList<string> list)
+    {
+        StringBuilder result = new StringBuilder(list[0]);
+        for (int i = 1 ; i < list.Count; i++ )
+        {
+            result.Append($",{list[i]}");
+        }
+        return result.ToString();
+    }
+    private static string[] ToList(string str)
+    {
+        return str.Split(',');
+    }
+    private static string ToBind(IReadOnlyCollection<string> list)
+    {
+        StringBuilder result = new StringBuilder("@val1"); 
+        for (int i = 1 ; i < list.Count; i++ )
+        {
+            result.Append($",@val{(i + 1)}");
+        }
+        return result.ToString();
+    }
         #endregion
         
         #region Queries
-            private void execute(MySqlCommand command, string[] bindvalues, Collection<string> values)
-            {
-                for (int i = 0 ; i < bindvalues.Length ; i++)
-                {
-                    command.Parameters.AddWithValue(bindvalues[i],values[i]);
-                }
-                command.Prepare();
-                command.ExecuteReader();
-            }
-            
-            public void insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
-            {
-                string bindValues = ToBind(values);
-                MySqlCommand query = new MySqlCommand("INSERT INTO " + table + " (" + ToStr(properties) + ") VALUES" + " (" + bindValues + ");", sql);
-                execute(query, ToList(bindValues), values);
-            }
-        #endregion
+    private static void Execute(MySqlCommand command, IReadOnlyList<string> bindValues, IReadOnlyList<string> values)
+    {
+        for (int i = 0 ; i < bindValues.Count ; i++)
+        {
+            command.Parameters.AddWithValue(bindValues[i],values[i]);
+        }
+        command.Prepare();
+        command.ExecuteReader();
     }
+            
+    public void Insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
+    {
+        string bindValues = ToBind(values);
+        MySqlCommand query = new MySqlCommand($"INSERT INTO {table} ({ToStr(properties)}) VALUES ({bindValues});", sql);
+        Execute(query, ToList(bindValues), values);
+    }
+        #endregion
 }

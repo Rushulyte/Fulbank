@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using Fulbank.Pages;
-using Fulbank.Classes;
 
-namespace Fulbank
+namespace Fulbank;
+
+static class Program
 {
-    static class Program
+    [STAThread]
+    private static void Main()
     {
-        [STAThread]
-        static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Connection());
-        }
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
+        Application.Run(new Connection());
     }
 }

@@ -16,38 +16,38 @@ public class BankAccount : MoneyInterface
     #region Constructor
         public BankAccount(int id, double balance, DateTime createdDate, string iban, AccountType accountType, User user) : base(id, balance, createdDate, user)
         {
-            setIban(iban);
-            setAccountType(accountType);
+            SetIban(iban);
+            SetAccountType(accountType);
             _operations = new Collection<Operation>();
             _conversions = new Collection<Conversion>();
         }
     #endregion
     
     #region Getters
-        public string getIban()
+        public string GetIban()
         {
             return _iban;
         }
-        public AccountType getAccountType()
+        public AccountType GetAccountType()
         {
             return _accountType;
         }
-        public Collection<Operation> getOperations()
+        public Collection<Operation> GetOperations()
         {
             return _operations;
         }
-        public Collection<Conversion> getConversions()
+        public Collection<Conversion> GetConversions()
         {
             return _conversions;
         }
     #endregion
     
     #region Setters
-        public void setIban(string iban)
+        public void SetIban(string iban)
         {
             _iban = iban;
         }
-        public void setAccountType(AccountType accountType)
+        public void SetAccountType(AccountType accountType)
         {
             _accountType = accountType;
         }
@@ -55,21 +55,21 @@ public class BankAccount : MoneyInterface
     
     #region Fonctions
         // Operations
-        public void linkOperation(Operation operation)
+        public void LinkOperation(Operation operation)
         {
             _operations.Add(operation);
         }
-        public void unlinkOperation(Operation operation)
+        public void UnlinkOperation(Operation operation)
         {
             _operations.Remove(operation);
         }
         
         // Conversions
-        public void linkConversion(Conversion conversion)
+        public void LinkConversion(Conversion conversion)
         {
             _conversions.Add(conversion);
         }
-        public void unlinkConversion(Conversion conversion)
+        public void UnlinkConversion(Conversion conversion)
         {
             _conversions.Remove(conversion);
         }
