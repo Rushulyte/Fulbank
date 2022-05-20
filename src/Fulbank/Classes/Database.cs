@@ -1,6 +1,7 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -91,26 +92,25 @@ namespace Fulbank.Classes
         #region Fonctions
             private string ToStr(Collection<string> list)
             {
-                string result = list[0];
+                StringBuilder result = new StringBuilder(list[0]);
                 for (int i = 1 ; i < list.Count; i++ )
                 {
-                    result += "," + list[i];
+                    result.Append("," + list[i]);
                 }
-                return result;
+                return result.ToString();
             }
             private string[] ToList(string str)
             {
-                Collection<string> result = new Collection<string>();
                 return str.Split(',');
             }
             private string ToBind(Collection<string> list)
             {
-                string result = "@val1";
+                StringBuilder result = new StringBuilder("@val1"); 
                 for (int i = 1 ; i < list.Count; i++ )
                 {
-                    result += "," + "@val" + (i + 1);
+                    result.Append(",@val" + (i + 1));
                 }
-                return result;
+                return result.ToString();
             }
         #endregion
         
