@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace Fulbank.Classes.Entities;
+
 public class ExternalOperation : Operation
 {
     #region Attributes

@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace Fulbank.Classes.Entities;
 
+
 public class BankAccount : MoneyInterface
 {
     #region Attributes
