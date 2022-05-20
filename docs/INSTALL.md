@@ -1,4 +1,4 @@
-# Installer l'application 
+# Installer l'application
 
 
 ## Dépendances
@@ -11,7 +11,7 @@ Vous pouvez le télécharger le runtime [ici](https://dotnet.microsoft.com/en-us
 #### Ajouter `msbuild` au variable de chemin
 
 Vous devrez ajouter la command msbuild au chemin d'access.
-L'executable `msbuild` se trouve dans le dossier `C:\Windows\Microsoft.NET\Framework\[Version]\msbuild` 
+L'executable `msbuild` se trouve dans le dossier `C:\Windows\Microsoft.NET\Framework\[Version]\msbuild`
 ou `C:\Program Files\Microsoft Visual Studio\[Year]\Community\MSBuild\Current\Bin` si vous avez installé `.Net Framework` en utilisant visual studio.
 
 Une fois le chemin de l'executable `msbuild` trouvé, copie ce dernier dans le presse-papier.
@@ -63,7 +63,7 @@ Lorsque vous installerez Python, n'oubliez pas de l'ajouter au variables de chem
 
 ## Télécharger le projet
 
-Si vous possédez git, utiliser la commande 
+Si vous possédez git, utiliser la commande
 
 ```bash
 git clone https://github.com/Rushulyte/Fulbank
@@ -95,7 +95,7 @@ Utiliser python pour executer le programme `main.py`.
 python db/feeder/main.py
 ```
 
-Selon l'installation de python, la commande peut aussi être 
+Selon l'installation de python, la commande peut aussi être
 
 ```py
 py db/feeder/main.py
@@ -103,17 +103,6 @@ py db/feeder/main.py
 
 
 ## Application
-
-### Ajouter les données de connexion
-
-Dans le fichier `Database.cs` situé dans le dossier `src/Fulbank/Classes/`, éditer les variables de connexion à la base de données 
-
-```cs
-_db = "fulbank";
-_user = "root";
-_psswd = "''";
-_host = "localhost";
-```
 
 ### Compilation
 
@@ -124,3 +113,7 @@ msbuild src/Fulbank/Fulbank.csproj /p:Configuration=Release  /t:rebuild /clp:Sho
  ```
 
 L'executable ce site dans le dossier `src/Fulbank/bin/Release`.
+
+### Ajouter les données de connexion
+
+Pour se connecter à la base de données l'utilisateur n'aura qu'à entrer les informations demandées à chaque ouverture de l'application (issue temporaire).
