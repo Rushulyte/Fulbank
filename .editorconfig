@@ -9,7 +9,8 @@ indent_size = 4
 
 # Microsoft .NET properties
 csharp_new_line_before_members_in_object_initializers = false
-csharp_preferred_modifier_order = public, private, protected, internal, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async:suggestion
+csharp_preferred_modifier_order = public, private, protected, internal, new, override, abstract, virtual, sealed, readonly, static, extern, unsafe, volatile, async:suggestion
+csharp_space_before_semicolon_in_for_statement = true
 csharp_style_var_for_built_in_types = false:suggestion
 dotnet_naming_rule.unity_serialized_field_rule.import_to_resharper = True
 dotnet_naming_rule.unity_serialized_field_rule.resharper_description = Unity serialized field
@@ -17,32 +18,48 @@ dotnet_naming_rule.unity_serialized_field_rule.resharper_guid = 5f0fdb63-c892-4d
 dotnet_naming_rule.unity_serialized_field_rule.severity = warning
 dotnet_naming_rule.unity_serialized_field_rule.style = lower_camel_case_style
 dotnet_naming_rule.unity_serialized_field_rule.symbols = unity_serialized_field_symbols
+dotnet_naming_rule.unity_serialized_field_rule_1.import_to_resharper = True
+dotnet_naming_rule.unity_serialized_field_rule_1.resharper_description = Unity serialized field
+dotnet_naming_rule.unity_serialized_field_rule_1.resharper_guid = 5f0fdb63-c892-4d2c-9324-15c80b22a7ef
+dotnet_naming_rule.unity_serialized_field_rule_1.severity = warning
+dotnet_naming_rule.unity_serialized_field_rule_1.style = lower_camel_case_style
+dotnet_naming_rule.unity_serialized_field_rule_1.symbols = unity_serialized_field_symbols_1
 dotnet_naming_style.lower_camel_case_style.capitalization = camel_case
 dotnet_naming_symbols.unity_serialized_field_symbols.applicable_accessibilities = *
-dotnet_naming_symbols.unity_serialized_field_symbols.applicable_kinds =
+dotnet_naming_symbols.unity_serialized_field_symbols.applicable_kinds = 
 dotnet_naming_symbols.unity_serialized_field_symbols.resharper_applicable_kinds = unity_serialised_field
 dotnet_naming_symbols.unity_serialized_field_symbols.resharper_required_modifiers = instance
+dotnet_naming_symbols.unity_serialized_field_symbols_1.applicable_accessibilities = *
+dotnet_naming_symbols.unity_serialized_field_symbols_1.applicable_kinds = 
+dotnet_naming_symbols.unity_serialized_field_symbols_1.resharper_applicable_kinds = unity_serialised_field
+dotnet_naming_symbols.unity_serialized_field_symbols_1.resharper_required_modifiers = instance
 dotnet_style_parentheses_in_arithmetic_binary_operators = never_if_unnecessary:none
 dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_relational_binary_operators = never_if_unnecessary:none
 dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
 dotnet_style_predefined_type_for_member_access = true:suggestion
 dotnet_style_qualification_for_event = false:suggestion
-dotnet_style_qualification_for_field = true:suggestion
-dotnet_style_qualification_for_method = true:suggestion
+dotnet_style_qualification_for_field = false:suggestion
+dotnet_style_qualification_for_method = false:suggestion
 dotnet_style_qualification_for_property = false:suggestion
 
 # ReSharper properties
 resharper_autodetect_indent_settings = true
-resharper_blank_lines_before_control_transfer_statements = 1
+resharper_blank_lines_after_block_statements = 0
+resharper_blank_lines_before_control_transfer_statements = 0
+resharper_braces_for_for = required
 resharper_csharp_blank_lines_around_invocable = 0
 resharper_csharp_blank_lines_inside_region = 0
 resharper_csharp_max_line_length = 160
 resharper_default_internal_modifier = implicit
+resharper_enforce_line_ending_style = true
 resharper_for_simple_types = use_explicit_type
 resharper_indent_preprocessor_region = do_not_change
+resharper_instance_members_qualify_declared_in = 
 resharper_object_creation_when_type_evident = explicitly_typed
 resharper_place_simple_embedded_statement_on_same_line = true
+resharper_show_autodetect_configure_formatting_tip = false
+resharper_space_before_catch_parentheses = false
 resharper_use_indent_from_vs = false
 
 # ReSharper inspection severities
