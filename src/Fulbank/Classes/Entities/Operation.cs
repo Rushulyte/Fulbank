@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public abstract class Operation
 {
@@ -14,21 +14,21 @@ public abstract class Operation
     #region Constructor
     protected Operation(int id, double amount, DateTime createdDate, BankAccount account)
         {
-            this.setId(id);
-            this.setAmount(amount);
-            this.setCreatedDate(createdDate);
-            this.setAccount(account);
+            setId(id);
+            setAmount(amount);
+            setCreatedDate(createdDate);
+            setAccount(account);
         }
     #endregion
     
     #region Getters
         public int getId()
         {
-            return this._id;
+            return _id;
         }
         public double getAmount()
         {
-            return this._amount;
+            return _amount;
         }
         public DateTime getCreatedDate()
         {
@@ -36,26 +36,26 @@ public abstract class Operation
         }
         public BankAccount getAccount()
         {
-            return this._account;
+            return _account;
         }
     #endregion
     
     #region Setters
         public void setId(int id)
         {
-            this._id = id;
+            _id = id;
         }
         public void setAmount(double amount)
         {
-            this._amount = amount;
+            _amount = amount;
         }
         public void setCreatedDate(DateTime createdDate)
         {
-            this._createdDate = createdDate;
+            _createdDate = createdDate;
         }
         public void setAccount(BankAccount account)
         {
-            this._account = account;
+            _account = account;
         }
     #endregion
 }

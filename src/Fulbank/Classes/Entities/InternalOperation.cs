@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public class InternalOperation : Operation
 {
@@ -11,21 +11,21 @@ public class InternalOperation : Operation
     #region Constructor
         public InternalOperation(int id, double amount, DateTime createdDate, BankAccount origin, BankAccount target) : base(id, amount, createdDate, origin)
         {
-            this.setTarget(target);
+            setTarget(target);
         }
     #endregion
     
     #region Getters
         public BankAccount getTarget()
         {
-            return this._target;
+            return _target;
         }
     #endregion
     
     #region Setters
         public void setTarget(BankAccount target)
         {
-            this._target = target;
+            _target = target;
         }
     #endregion
 }

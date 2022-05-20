@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
-public class UserType
+public class UserType : Meta
 {
     #region Attributes
         private int _id;
@@ -14,55 +14,55 @@ public class UserType
     #region Constructor
         public UserType(int id, string name, string role)
         {
-            this.setId(id);
-            this.setName(name);
-            this.setRole(role);
-            this._users = new Collection<User>();
+            setId(id);
+            setName(name);
+            setRole(role);
+            _users = new Collection<User>();
         }
     #endregion
     
     #region Getters
         public int getId()
         {
-            return this._id;
+            return _id;
         }
         public string getName()
         {
-            return this._name;
+            return _name;
         }
         public string getRole()
         {
-            return this._role;
+            return _role;
         }
         public Collection<User> getUsers()
         {
-            return this._users;
+            return _users;
         }
     #endregion
     
     #region Setters
         public void setId(int id)
         {
-            this._id = id;
+            _id = id;
         }
         public void setName(string name)
         {
-            this._name = name;
+            _name = name;
         }
         public void setRole(string role)
         {
-            this._role = role;
+            _role = role;
         }
     #endregion
 
     #region Fonctions
-        public void addUser(User user)
+        public void linkUser(User user)
         {
-            this._users.Add(user);
+            _users.Add(user);
         }
-        public void removeUser(User user)
+        public void unlinkUser(User user)
         {
-            this._users.Remove(user);
+            _users.Remove(user);
         }
     #endregion
 }

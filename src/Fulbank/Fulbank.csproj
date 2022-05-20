@@ -35,7 +35,7 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-          <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\MySql.Data.dll</HintPath>
+            <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\MySql.Data.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System.ComponentModel" />
@@ -55,53 +55,63 @@
         <Reference Include="System.Windows.Forms" />
         <Reference Include="System.Xml" />
         <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-          <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\Ubiety.Dns.Core.dll</HintPath>
+            <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\Ubiety.Dns.Core.dll</HintPath>
         </Reference>
         <Reference Include="ZstdNet, Version=1.4.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-          <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\ZstdNet.dll</HintPath>
+            <HintPath>..\packages\MySql.Data.8.0.29\lib\net48\ZstdNet.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="entities\AccountType.cs" />
-        <Compile Include="entities\BankAccount.cs" />
-        <Compile Include="entities\Conversion.cs" />
-        <Compile Include="entities\CryptoCurrency.cs" />
-        <Compile Include="entities\Database.cs" />
-        <Compile Include="entities\ExternalOperation.cs" />
-        <Compile Include="entities\InternalOperation.cs" />
-        <Compile Include="entities\MoneyInterface.cs" />
-        <Compile Include="entities\Operation.cs" />
-        <Compile Include="entities\User.cs" />
-        <Compile Include="entities\UserType.cs" />
-        <Compile Include="entities\Wallet.cs" />
-        <Compile Include="Pages\Home.cs">
+        <Compile Include="Classes\Database.cs" />
+        <Compile Include="Classes\Entities\AccountType.cs" />
+        <Compile Include="Classes\Entities\BankAccount.cs" />
+        <Compile Include="Classes\Entities\Conversion.cs" />
+        <Compile Include="Classes\Entities\CryptoCurrency.cs" />
+        <Compile Include="Classes\Entities\ExternalOperation.cs" />
+        <Compile Include="Classes\Entities\InternalOperation.cs" />
+        <Compile Include="Classes\Entities\MoneyInterface.cs" />
+        <Compile Include="Classes\Entities\Operation.cs" />
+        <Compile Include="Classes\Entities\User.cs" />
+        <Compile Include="Classes\Entities\UserType.cs" />
+        <Compile Include="Classes\Entities\Wallet.cs" />
+        <Compile Include="Classes\Meta.cs" />
+        <Compile Include="Pages\Connection.cs">
           <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Pages\Connection.Designer.cs">
+          <DependentUpon>Connection.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Pages\Home.cs">
+            <SubType>Form</SubType>
         </Compile>
         <Compile Include="Pages\Home.Designer.cs">
-          <DependentUpon>Home.cs</DependentUpon>
+            <DependentUpon>Home.cs</DependentUpon>
         </Compile>
         <Compile Include="Pages\Login.cs">
-          <SubType>Form</SubType>
+            <SubType>Form</SubType>
         </Compile>
         <Compile Include="Pages\Login.Designer.cs">
-          <DependentUpon>Login.cs</DependentUpon>
+            <DependentUpon>Login.cs</DependentUpon>
         </Compile>
         <Compile Include="Pages\Register.cs">
-          <SubType>Form</SubType>
+            <SubType>Form</SubType>
         </Compile>
         <Compile Include="Pages\Register.Designer.cs">
-          <DependentUpon>Register.cs</DependentUpon>
+            <DependentUpon>Register.cs</DependentUpon>
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="Pages\Connection.resx">
+          <DependentUpon>Connection.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Pages\Home.resx">
-          <DependentUpon>Home.cs</DependentUpon>
+            <DependentUpon>Home.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Pages\Login.resx">
-          <DependentUpon>Login.cs</DependentUpon>
+            <DependentUpon>Login.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Pages\Register.resx">
-          <DependentUpon>Register.cs</DependentUpon>
+            <DependentUpon>Register.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>

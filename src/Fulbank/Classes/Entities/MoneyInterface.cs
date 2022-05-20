@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Dynamic;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
 public abstract class MoneyInterface
 {
@@ -15,21 +14,21 @@ public abstract class MoneyInterface
     #region Constructor
         public MoneyInterface(int id, double balance, DateTime createdDate, User user)
         {
-            this.setId(id);
-            this.setBalance(balance);
-            this.setCreatedDate(createdDate);
-            this.setUser(user);
+            setId(id);
+            setBalance(balance);
+            setCreatedDate(createdDate);
+            setUser(user);
         }
     #endregion
     
     #region Getters
         public int getId()
         {
-            return this._id;
+            return _id;
         }
         public double getBalance()
         {
-            return this._balance;
+            return _balance;
         }
         public DateTime getCreatedDate()
         {
@@ -37,26 +36,26 @@ public abstract class MoneyInterface
         }
         public User getUser()
         {
-            return this._user;
+            return _user;
         }
     #endregion
     
     #region Setters
         public void setId(int id)
         {
-            this._id = id;
+            _id = id;
         }
         public void setBalance(double balance)
         {
-            this._balance = balance;
+            _balance = balance;
         }
         public void setCreatedDate(DateTime createdDate)
         {
-            this._createdDate = createdDate;
+            _createdDate = createdDate;
         }
         public void setUser(User user)
         {
-            this._user = user;
+            _user = user;
         }
     #endregion
 }

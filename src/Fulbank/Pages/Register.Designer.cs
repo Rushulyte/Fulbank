@@ -1,6 +1,6 @@
 using System.ComponentModel;
 
-namespace Fulbank
+namespace Fulbank.Pages
 {
     partial class Register
     {

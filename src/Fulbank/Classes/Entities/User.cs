@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace Fulbank.entities;
+namespace Fulbank.Classes.Entities;
 
-public class User
+public class User : Meta
 {
     #region Attributes
         private int _id;
@@ -23,118 +23,118 @@ public class User
         public User(int id, string firstname, string lastname, string email, string authenticationString, string phone,
             string address, string salt, DateTime createdDate, UserType type)
         {
-            this.setId(id);
-            this.setFirstname(firstname);
-            this.setLastname(lastname);
-            this.setEmail(email);
-            this.setAuthenticationString(authenticationString);
-            this.setPhone(phone);
-            this.setAddress(address);
-            this.setSalt(salt);
-            this.setCreatedDate(createdDate);
-            this.setType(type);
-            this._accounts = new Collection<MoneyInterface>();
+            setId(id);
+            setFirstname(firstname);
+            setLastname(lastname);
+            setEmail(email);
+            setAuthenticationString(authenticationString);
+            setPhone(phone);
+            setAddress(address);
+            setSalt(salt);
+            setCreatedDate(createdDate);
+            setType(type);
+            _accounts = new Collection<MoneyInterface>();
         }
     #endregion
     
     #region Getters
         public int getId()
         {
-            return this._id;
+            return _id;
         }
         public string getFirstname()
         {
-            return this._firstname;
+            return _firstname;
         }
         public string getLastname()
         {
-            return this._lastname;
+            return _lastname;
         }
         public string getEmail()
         {
-            return this._email;
+            return _email;
         }
         public string getAuthenticationString()
         {
-            return this._authenticationString;
+            return _authenticationString;
         }
         public string getPhone()
         {
-            return this._phone;
+            return _phone;
         }
         public string getAddress()
         {
-            return this._address;
+            return _address;
         }
         public string getSalt()
         {
-            return this._salt;
+            return _salt;
         }
         public DateTime getCreatedDate()
         {
-            return this._createdDate;
+            return _createdDate;
         }
         public UserType getType()
         {
-            return this._type;
+            return _type;
         }
         public Collection<MoneyInterface> getAccounts()
         {
-            return this._accounts;
+            return _accounts;
         }
     #endregion
     
     #region Setters
         public void setId(int id)
         {
-            this._id = id;
+            _id = id;
         }
         public void setFirstname(string firstname)
         {
-            this._firstname = firstname;
+            _firstname = firstname;
         }
         public void setLastname(string lastname)
         {
-            this._lastname = lastname;
+            _lastname = lastname;
         }
         public void setEmail(string email)
         {
-            this._email = email;
+            _email = email;
         }
         public void setAuthenticationString(string auth_string)
         {
-            this._authenticationString = auth_string;
+            _authenticationString = auth_string;
         }
         public void setPhone(string phone)
         {
-            this._phone = phone;
+            _phone = phone;
         }
         public void setAddress(string address)
         {
-            this._address = address;
+            _address = address;
         }
         public void setSalt(string salt)
         {
-            this._salt = salt;
+            _salt = salt;
         }
         public void setCreatedDate(DateTime createdDate)
         {
-            this._createdDate = createdDate;
+            _createdDate = createdDate;
         }
         public void setType(UserType type)
         {
-            this._type = type;
+            _type = type;
         }
     #endregion
     
     #region Fonctions
-        public void addAccount(MoneyInterface account)
+        public void linkAccount(MoneyInterface account)
         {
-            this._accounts.Add(account);
+            _accounts.Add(account);
         }
-        public void removeAccount(MoneyInterface account)
+        public void unlinkAccount(MoneyInterface account)
         {
-            this._accounts.Remove(account);
+            _accounts.Remove(account);
         }
     #endregion
 }

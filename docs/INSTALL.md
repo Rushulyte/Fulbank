@@ -1,4 +1,4 @@
-# Installer l'application 
+# Installer l'application
 
 
 ## Dépendances
@@ -11,7 +11,7 @@ Vous pouvez le télécharger le runtime [ici](https://dotnet.microsoft.com/en-us
 #### Ajouter `msbuild` au variable de chemin
 
 Vous devrez ajouter la command msbuild au chemin d'access.
-L'executable `msbuild` se trouve dans le dossier `C:\Windows\Microsoft.NET\Framework\[Version]\msbuild` 
+L'executable `msbuild` se trouve dans le dossier `C:\Windows\Microsoft.NET\Framework\[Version]\msbuild`
 ou `C:\Program Files\Microsoft Visual Studio\[Year]\Community\MSBuild\Current\Bin` si vous avez installé `.Net Framework` en utilisant visual studio.
 
 Une fois le chemin de l'executable `msbuild` trouvé, copie ce dernier dans le presse-papier.
@@ -63,7 +63,7 @@ Lorsque vous installerez Python, n'oubliez pas de l'ajouter au variables de chem
 
 ## Télécharger le projet
 
-Si vous possédez git, utiliser la commande 
+Si vous possédez git, utiliser la commande
 
 ```bash
 git clone https://github.com/Rushulyte/Fulbank
@@ -95,7 +95,7 @@ Utiliser python pour executer le programme `main.py`.
 python db/feeder/main.py
 ```
 
-Selon l'installation de python, la commande peut aussi être 
+Selon l'installation de python, la commande peut aussi être
 
 ```py
 py db/feeder/main.py
