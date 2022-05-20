@@ -75,6 +75,12 @@
         <Compile Include="Classes\Entities\UserType.cs" />
         <Compile Include="Classes\Entities\Wallet.cs" />
         <Compile Include="Classes\Meta.cs" />
+        <Compile Include="Pages\Connection.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Pages\Connection.Designer.cs">
+          <DependentUpon>Connection.cs</DependentUpon>
+        </Compile>
         <Compile Include="Pages\Home.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -95,6 +101,9 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="Pages\Connection.resx">
+          <DependentUpon>Connection.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Pages\Home.resx">
             <DependentUpon>Home.cs</DependentUpon>
         </EmbeddedResource>

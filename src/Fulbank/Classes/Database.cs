@@ -13,60 +13,77 @@ namespace Fulbank.Classes
             private string _user;
             private string _psswd;
             private string _host;
-            private string _data;
             private MySqlConnection _conn;
         #endregion
-        
-        #region Constructor
-            public Database()
-            {
-                _db = "fulbank";
-                _user = "root";
-                _psswd = "''";
-                _host = "localhost";
-                _data = "server=" + _host + ";database=" + _db + ";uid=" + _user + ";password=" + _psswd + ";SSL MODE='None'";
-            }
-        #endregion
-        
+
         #region Getters
+            public string getName()
+            {
+                return _db;
+            }
+            public string getUser()
+            {
+                return _user;
+            }
+            public string getPassword()
+            {
+                return _psswd;
+            }
+            public string getHost()
+            {
+                return _host;
+            }
             public MySqlConnection getConnection()
             {
                 return _conn;
             }
         #endregion
         
-        #region Connection
-        public void createConnection()
+        #region Setters
+            public void setName(string name)
             {
-                try
-                {
-                    _conn = new MySqlConnection(_data);
-                }
-                catch (MySqlException e)
-                {
-                    MessageBox.Show("#ERROR# Can't connect to the database : " + e);
-                }
+                _db = name;
+            }
+            public void setUser(string user)
+            {
+                _user = user;
+            }
+            public void setPassword(string password)
+            {
+                _psswd = password;
+            }
+            public void setHost(string host)
+            {
+                _host = host;
+            }
+        #endregion
+        
+        #region Connection
+            public void createConnection()
+            {
+                _conn = new MySqlConnection("server=" + _host + ";database=" + _db + ";uid=" + _user + ";password=" + _psswd + ";SSL MODE='None'");
             }
             public void openConnection(MySqlConnection sql)
             {
-                try
-                {
-                    sql.Open();
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show("#ERROR# Can't open the database : " + e);
-                }
+                sql.Open();
             }
             public void closeConnection(MySqlConnection sql)
             {
+                sql.Close();
+            }
+            public bool testConnection(MySqlConnection sql)
+            {
                 try
                 {
-                    sql.Close();
+                    openConnection(sql);
+                    closeConnection(sql);
+                    MessageBox.Show("Database connected");
+                    return true;
                 }
                 catch(Exception e)
                 {
-                    MessageBox.Show("#ERROR# Can't close the database : " + e);
+                    MessageBox.Show("#ERROR# Can't connect to the database : " + e);
+                    return false;
                 }
             }
         #endregion
