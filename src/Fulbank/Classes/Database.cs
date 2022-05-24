@@ -124,12 +124,25 @@ public class Database
         command.Prepare();
         command.ExecuteReader();
     }
-            
     public void Insert(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values)
     {
         string bindValues = ToBind(values);
         MySqlCommand query = new MySqlCommand($"INSERT INTO {table} ({ToStr(properties)}) VALUES ({bindValues});", sql);
         Execute(query, ToList(bindValues), values);
+    }
+
+    public void Update(MySqlConnection sql, string table, Collection<string> properties, Collection<string> values, string where)
+    {
+        string bindValues = ToBind(values);
+        MySqlCommand query = new MySqlCommand($"UPDATE {table} SET {ToStr(properties)} WHERE {where};", sql);
+        Execute(query, ToList(bindValues), values);
+    }
+
+    public void Delete(MySqlConnection sql, string table, string where)
+    {
+        MySqlCommand query = new MySqlCommand($"DELETE FROM {table} WHERE {where};", sql);
+        query.Prepare();
+        query.ExecuteReader();
     }
         #endregion
 }
