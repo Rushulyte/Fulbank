@@ -69,7 +69,7 @@ Si vous possédez git, utiliser la commande
 git clone https://github.com/Rushulyte/Fulbank
 ```
 
-Sinon cliquez sur le boutton de téléchargement sur le repository Github.
+Sinon render vous sur [la dernière release](https://github.com/Rushulyte/Fulbank/releases/tag/v0.1.0) et cliquer sur `Source code (zip)`.
 
 
 ## Base de données
