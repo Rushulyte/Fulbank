@@ -63,18 +63,6 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Classes\Database.cs" />
-        <Compile Include="Classes\Entities\AccountType.cs" />
-        <Compile Include="Classes\Entities\BankAccount.cs" />
-        <Compile Include="Classes\Entities\Conversion.cs" />
-        <Compile Include="Classes\Entities\CryptoCurrency.cs" />
-        <Compile Include="Classes\Entities\ExternalOperation.cs" />
-        <Compile Include="Classes\Entities\InternalOperation.cs" />
-        <Compile Include="Classes\Entities\MoneyInterface.cs" />
-        <Compile Include="Classes\Entities\Operation.cs" />
-        <Compile Include="Classes\Entities\User.cs" />
-        <Compile Include="Classes\Entities\UserType.cs" />
-        <Compile Include="Classes\Entities\Wallet.cs" />
-        <Compile Include="Classes\Meta.cs" />
         <Compile Include="Pages\Connection.cs">
           <SubType>Form</SubType>
         </Compile>
