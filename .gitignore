@@ -7,8 +7,7 @@
 # WinDesign file
 *.wdt
 
-# Binary & compiled obj
-bin
+# Compiled obj
 obj
 
 # Python env & cache
